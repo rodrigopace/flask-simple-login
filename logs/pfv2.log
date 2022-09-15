@@ -1,0 +1,49 @@
+2022-09-15 12:14:56,648 ERROR: Exception on /login [POST] [in /home/opc/simple-login/venv/lib64/python3.6/site-packages/flask/app.py:1458]
+Traceback (most recent call last):
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1008, in __call__
+    return self.registry[key]
+KeyError: <greenlet.greenlet object at 0x7f9e30a156d0 (otid=0x7f9e301badc8) current active started main>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/home/opc/simple-login/pfv2/app/routes.py", line 27, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 552, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/orm/scoping.py", line 47, in __call__
+    sess = self.registry()
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/util/_collections.py", line 1010, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/orm/session.py", line 4228, in __call__
+    return self.class_(**local_kw)
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 176, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 998, in engine
+    return self.get_engine()
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 1017, in get_engine
+    return connector.get_engine()
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 594, in get_engine
+    self._engine = rv = self._sa.create_engine(sa_url, options)
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/flask_sqlalchemy/__init__.py", line 1027, in create_engine
+    return sqlalchemy.create_engine(sa_url, **engine_opts)
+  File "<string>", line 2, in create_engine
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/util/deprecations.py", line 309, in warned
+    return fn(*args, **kwargs)
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/engine/create.py", line 548, in create_engine
+    dbapi = dialect_cls.dbapi(**dbapi_args)
+  File "/home/opc/simple-login/venv/lib64/python3.6/site-packages/sqlalchemy/dialects/mysql/mysqldb.py", line 163, in dbapi
+    return __import__("MySQLdb")
+ModuleNotFoundError: No module named 'MySQLdb'
+2022-09-15 12:15:53,640 INFO: PFV2 startup [in /home/opc/simple-login/pfv2/app/__init__.py:36]
+2022-09-15 12:25:42,680 INFO: PFV2 startup [in /home/opc/simple-login/pfv2/app/__init__.py:36]
+2022-09-15 12:26:47,912 INFO: PFV2 startup [in /home/opc/simple-login/pfv2/app/__init__.py:36]
+2022-09-15 12:28:06,275 INFO: PFV2 startup [in /home/opc/simple-login/app/__init__.py:36]
