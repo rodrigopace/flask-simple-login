@@ -18,7 +18,7 @@ You can use any other DB like MySQL or SQLite
 
 To run flask on your local IP (not localhost), run:
 
-* flash run --host=0.0.0.0
+* flask run --host=0.0.0.0
 
 Notes:
 
@@ -26,3 +26,6 @@ Notes:
 2. This app must be used for educational purposes only.
 3. Make sure to open the correct ports in your perimeter security.
 4. Make sure to close all accesses after using this app
+5. Make sure to open ports on your host firewall
+6. Make sure your SE-Linux allows connections to your server
+7. **THIS LAB MUST NOT BE USED IN A PRODUCTION ENVIRONMENT**
